@@ -106,5 +106,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         balloonNode.position = SCNVector3(hitTest.worldTransform.columns.3.x, hitTest.worldTransform.columns.3.y, hitTest.worldTransform.columns.3.z)
         
         sceneView.scene.rootNode.addChildNode(balloonNode)
+        
+        // 5.1
+        // Animate using SceneKit physics
+        
+        balloonNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
+        balloonNode.physicsBody?.isAffectedByGravity = false
+        balloonNode.physicsBody?.damping = 0.0
+        let xCord = 10 + Float(arc4random_uniform(20))
+        let yCord = 20 + Float(arc4random_uniform(40))
+        balloonNode.physicsBody?.applyForce(SCNVector3(xCord,yCord,0), asImpulse: false)
     }
 }

@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2018-07-13T01:10:28Z</created>
-  <modified>2018-07-13T01:10:28Z</modified>
+  <created>2018-07-13T01:53:51Z</created>
+  <modified>2018-07-13T01:53:51Z</modified>
   <unit meter="0.025400"/>
   <up_axis>Z_UP</up_axis>
  </asset>
@@ -274,6 +274,7 @@
     <node id="instance_0" name="instance_0">
      <node id="ID4" name="skpe5ikgJ">
       <node id="ID5" name="balloon">
+       <matrix>0.005 0 0 0 0 0.005 0 0 0 0 0.005 0 0 0 0 1 </matrix>
        <node id="GeoSphere0" name="GeoSphere0">
         <instance_geometry url="#geometry1">
          <bind_material>

@@ -22,17 +22,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        // 4.2
         sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
         
         // Create a new scene
-        // 4.1
         let scene = SCNScene()
         
         // Set the scene to the view
         sceneView.scene = scene
         
-        // 4.4
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         sceneView.addGestureRecognizer(gestureRecognizer)
     }
@@ -85,7 +82,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
-    // 4.5
     @objc func tapped(gesture: UITapGestureRecognizer) {
         let touchPosition = gesture.location(in: sceneView)
         
@@ -99,7 +95,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         addBalloon(hitTest: hitTest)
     }
     
-    // 4.6
     func addBalloon(hitTest: ARHitTestResult) {
         let scene = SCNScene(named: "art.scnassets/red_balloon.dae")
         let balloonNode = Balloon(scene: scene!)

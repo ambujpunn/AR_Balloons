@@ -113,8 +113,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         balloonNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
         balloonNode.physicsBody?.isAffectedByGravity = false
         balloonNode.physicsBody?.damping = 0.0
-        let xCord = 10 + Float(arc4random_uniform(20))
-        let yCord = 20 + Float(arc4random_uniform(40))
-        balloonNode.physicsBody?.applyForce(SCNVector3(xCord,yCord,0), asImpulse: false)
+        // Randomize direction for horizontal movement
+        let negativeHorizontal = Int(arc4random_uniform(2)) == 0 ? -1 : 1
+        let xCord = 10 + Float(arc4random_uniform(50))
+        let yCord = 20 + Float(arc4random_uniform(100))
+        balloonNode.physicsBody?.applyForce(SCNVector3(Float(negativeHorizontal)*xCord,yCord,0), asImpulse: false)
     }
 }
